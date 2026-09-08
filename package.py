@@ -22,20 +22,20 @@ if sys.platform == "darwin":
         stage = Path(temporary) / "Tracker Radar"
         stage.mkdir()
         shutil.copytree(root / "dist/Tracker Radar.app", stage / "Tracker Radar.app", symlinks=True)
-        for filename in ("Start Tracker Radar.command", "QUICKSTART.md", "THIRD_PARTY_NOTICES.md", "LICENSE"):
+        for filename in ("Start Tracker Radar.command", "README.md", "THIRD_PARTY_NOTICES.md", "LICENSE"):
             shutil.copy2(root / filename, stage / filename)
         subprocess.run(["ditto", "-c", "-k", "--sequesterRsrc", "--keepParent",
                         str(stage), str(out / (name + ".zip"))], check=True)
 elif sys.platform == "win32":
     shutil.copy2(root / "LICENSE", root / "dist/Tracker Radar/LICENSE")
-    shutil.copy2(root / "QUICKSTART.md", root / "dist/Tracker Radar/QUICKSTART.md")
+    shutil.copy2(root / "README.md", root / "dist/Tracker Radar/README.md")
     shutil.copy2(root / "THIRD_PARTY_NOTICES.md", root / "dist/Tracker Radar/THIRD_PARTY_NOTICES.md")
     with zipfile.ZipFile(out / (name + ".zip"), "w", zipfile.ZIP_DEFLATED) as archive:
         for path in (root / "dist/Tracker Radar").rglob("*"):
             archive.write(path, path.relative_to(root / "dist"))
 else:
     shutil.copy2(root / "LICENSE", root / "dist/Tracker Radar/LICENSE")
-    shutil.copy2(root / "QUICKSTART.md", root / "dist/Tracker Radar/QUICKSTART.md")
+    shutil.copy2(root / "README.md", root / "dist/Tracker Radar/README.md")
     shutil.copy2(root / "THIRD_PARTY_NOTICES.md", root / "dist/Tracker Radar/THIRD_PARTY_NOTICES.md")
     with tarfile.open(out / (name + ".tar.gz"), "w:gz") as archive:
         archive.add(root / "dist/Tracker Radar", arcname="Tracker Radar")

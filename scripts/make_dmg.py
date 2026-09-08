@@ -45,7 +45,7 @@ def main():
         # Only release documentation; no local source, logs or settings.
         documentation = stage / '.documentation'
         documentation.mkdir()
-        for name in ('QUICKSTART.md', 'LICENSE', 'THIRD_PARTY_NOTICES.md'):
+        for name in ('README.md', 'LICENSE', 'THIRD_PARTY_NOTICES.md'):
             shutil.copy2(ROOT / name, documentation / name)
         with (stage / website).open('wb') as stream:
             plistlib.dump({'URL': layout['website']['url']}, stream)
