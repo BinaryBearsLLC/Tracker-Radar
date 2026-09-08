@@ -1,0 +1,16 @@
+# Unchanged local handoff archives; public downloads belong in Releases.
+/prebuilt/
+/.venv/
+/build/
+/dist/
+/output/
+/.playwright-cli/
+__pycache__/
+*.py[cod]
+*.spec
+.DS_Store
+.env
+.env.*
+*.p12
+*.pfx
+*.key
