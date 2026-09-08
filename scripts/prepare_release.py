@@ -10,7 +10,7 @@ from tracker_core import APP_VERSION
 folder = Path(sys.argv[1])
 assert os.environ['RELEASE_TAG'] == f'v{APP_VERSION}', 'Tag/source version mismatch'
 expected = {f'Tracker-Radar-{APP_VERSION}-{label}{ext}' for label, ext in (
-    ('macOS-Universal', '.zip'), ('Windows-x64', '.zip'), ('Linux-x64', '.tar.gz'))}
+    ('macOS-Universal', '.dmg'), ('Windows-x64', '.zip'), ('Linux-x64', '.tar.gz'))}
 actual = {p.name for p in folder.iterdir()}
 assert actual == expected, f'Unexpected release assets: {actual ^ expected}'
 lines = []

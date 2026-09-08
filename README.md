@@ -21,11 +21,11 @@ Private torrent files use only embedded trackers; cross-origin tracker redirects
 
 | Platform | Package | Requirements |
 | --- | --- | --- |
-| macOS Universal | ZIP | macOS 11+, Apple Silicon or Intel |
+| macOS Universal | DMG | macOS 11+, Apple Silicon or Intel |
 | Windows x64 | ZIP | Windows 10+, Intel/AMD 64-bit |
 | Linux x64 | TAR.GZ | glibc 2.36+, X11/XWayland |
 
-Get packages and SHA-256 checksums from [GitHub Releases](https://github.com/BinaryBearsLLC/Tracker-Radar/releases). Extract the entire archive; Python is bundled. Signing/notarization status is stated in each release. The app is Python/Tk, with an English interface.
+Get packages and SHA-256 checksums from [GitHub Releases](https://github.com/BinaryBearsLLC/Tracker-Radar/releases). On macOS, open the DMG and drag Tracker Radar to Applications. On Windows and Linux, extract the entire archive. Python is bundled. Signing/notarization status is stated in each release. The app is Python/Tk, with an English interface.
 
 ## Development
 
@@ -47,7 +47,7 @@ On Windows, invoke `.venv\Scripts\python.exe` directly; activation or execution-
 .venv/bin/python package.py macOS-Universal # Windows-x64 or Linux-x64 on those hosts
 ```
 
-A Universal Mac build requires Universal Python/Tk and `MACOS_TARGET_ARCH=universal2`. `package.py` checks actual executable architecture; it does not infer it from the host. For an authorized local Developer ID build, set `MACOS_SIGN_IDENTITY`. The automated Mac build uses ad-hoc signing and has no notarization credentials.
+A Universal Mac build requires Universal Python/Tk and `MACOS_TARGET_ARCH=universal2`. `package.py` checks actual executable architecture; it does not infer it from the host. For an authorized local Developer ID build, set `MACOS_SIGN_IDENTITY`. Release Mac builds require Developer ID signing and Apple notarization for both the app and DMG. See [Signing](SIGNING.md) for the local and GitHub Actions setup. Ordinary CI builds use an ad-hoc ZIP.
 
 ## Automation and releases
 

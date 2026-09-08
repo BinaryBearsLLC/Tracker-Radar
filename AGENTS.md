@@ -79,7 +79,7 @@ codesign --verify --deep --strict 'dist/Tracker Radar.app'
 xcrun stapler validate 'dist/Tracker Radar.app'
 ```
 
-The supplied Mac package has **no notarization ticket**. Ask for the name of an already configured notarytool profile if notarization is requested; never ask the owner to paste secrets into chat. Do not claim that a signature alone removes Gatekeeper warnings.
+The historical 3.1.0 Mac package has **no notarization ticket**. Current release automation signs and notarizes both the 1.0.0 app and branded DMG; see `SIGNING.md`. Ask for the name of an already configured notarytool profile if notarization is requested; never ask the owner to paste secrets into chat. Do not claim that a signature alone removes Gatekeeper warnings.
 
 ### Linux package
 

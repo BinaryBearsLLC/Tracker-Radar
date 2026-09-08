@@ -14,3 +14,10 @@ __pycache__/
 *.p12
 *.pfx
 *.key
+# Signing material and private configuration never belong in this repository.
+*.p8
+*.pem
+*.keychain
+*.keychain-db
+*.env
+*.env.*

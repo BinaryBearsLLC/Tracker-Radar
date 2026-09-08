@@ -2,7 +2,7 @@
 
 Open Tracker Radar. No Python installation is needed.
 
-On Windows and Linux, extract the whole archive first and keep the executable with its bundled files. On macOS, open the app or use the included Start Tracker Radar.command.
+On Windows and Linux, extract the whole archive first and keep the executable with its bundled files. On macOS, open the DMG, drag Tracker Radar to Applications, then launch it from Applications.
 
 1. Click **Load list** to fetch the ngosang presets, or import your own `.txt`.
 2. Optionally add a magnet or `.torrent` to query seeders and peers.
@@ -14,7 +14,7 @@ Double-click a row for details. Review means the tracker needs attention, not th
 
 The app contacts trackers directly. No content is downloaded, but trackers can see your IP and the requested torrent hash. Private torrent files are restricted to their embedded trackers; use the original `.torrent` for private swarms. Treat exported passkeys as credentials.
 
-Signing and notarization status is stated in each GitHub release. Automated builds are ad-hoc signed on macOS and unsigned on Windows unless a signed replacement is explicitly listed. A fresh download can trigger the operating system's security checks; a locally passing test does not establish warning-free public distribution.
+Signing and notarization status is stated in each GitHub release. Release DMGs and their apps are Developer ID signed and Apple notarized. Ordinary CI ZIPs use ad-hoc signatures; Windows builds are unsigned. A fresh download can trigger the operating system's security checks; a locally passing test does not establish warning-free public distribution.
 
 Linux x64 packages built on Debian 12 require glibc 2.36+ and X11/XWayland. Windows packages are x64. macOS packages are Universal (Apple Silicon and Intel).
 
