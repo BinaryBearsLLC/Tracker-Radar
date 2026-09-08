@@ -2,14 +2,14 @@ First public release of Tracker Radar by BinaryBears.
 
 Load tracker lists from TXT, paste, URL or ngosang presets. Test UDP, HTTP and HTTPS directly, optionally query a magnet or torrent, then copy or save a clean list with zero-seeder and zero-peer filters. Private torrent files use only their embedded trackers. No DHT, peer connections, content downloads or telemetry.
 
-Download one archive for your platform and extract it completely. Python is bundled.
+Download the package for your platform. On macOS, open the DMG and drag Tracker Radar to Applications. On Windows and Linux, extract the whole archive. Python is bundled.
 
-- **macOS Universal:** macOS 11+, Apple Silicon and Intel. This release includes the locally Developer ID signed BinaryBears build of the tagged source; it is not notarized. Gatekeeper may block a downloaded app; no security checks are disabled by the installer.
+- **macOS Universal:** macOS 11+, Apple Silicon and Intel. Branded drag-to-Applications DMG. Both app and DMG are signed by BinaryBears LLC with Developer ID, accepted by Apple notarization, stapled and verified by Gatekeeper.
 - **Windows x64:** Windows 10+, Intel/AMD 64-bit. Unsigned; SmartScreen may warn.
 - **Linux x64:** glibc 2.36+, X11/XWayland. Built on Debian 12.
 
-The release workflow runs protocol tests, source GUI smoke, packaged GUI/worker smoke and executable architecture checks before publishing all three archives. macOS includes an Intel smoke under Rosetta. Linux uses Xvfb. These checks do not establish full physical-desktop QA or compatibility with every supported OS version.
+The release workflow runs protocol tests, source GUI smoke, packaged GUI/worker smoke and executable architecture checks before publishing all three platform packages. Release Mac builds additionally require app and DMG notarization. macOS includes an Intel smoke under Rosetta. Linux uses Xvfb. These checks do not establish full physical-desktop QA or compatibility with every supported OS version.
 
 Use SHA256SUMS.txt to check downloaded archives. Source and bundled dependencies retain their respective licenses; see THIRD_PARTY_NOTICES.md.
 
-For 1.0.0, the Mac CI artifact was replaced with the verified local Developer ID build (Python 3.13.14); Windows and Linux are the tagged CI artifacts. All three final archive hashes are in SHA256SUMS.txt.
+The 1.0.0 Mac ZIP has been replaced with the verified local, signed and notarized DMG (Python 3.13.14), containing the same tagged application source. Windows and Linux remain the tagged CI artifacts. All three final package hashes are in SHA256SUMS.txt.
